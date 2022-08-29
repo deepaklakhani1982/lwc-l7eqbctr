@@ -1,0 +1,27 @@
+<template>
+  <div class="c-container">
+    <ul class="slds-has-dividers_around slds-has-block-links_space">
+      <template for:each={lstAccounts} for:item="acc" for:index="index">
+        <li class="slds-item" key={acc.index}>
+          <lightning-card title={acc.Id}>
+            <lightning-icon data-id={index} icon-name="utility:delete" size="x-small" slot="actions"
+              onclick={handleClick}>
+            </lightning-icon>
+          </lightning-card>
+        </li>
+      </template>
+    </ul>
+
+
+    <div class="slds-p-around_none slds-m-bottom_medium slds-m-horizontal_none">
+      <lightning-layout>
+        <lightning-layout-item padding="around-small" size="8">
+          <lightning-input label="Enter text" variant="label-hidden"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+          <lightning-button label="Add" variant="brand"></lightning-button>
+        </lightning-layout-item>
+      </lightning-layout>
+    </div>
+  </div>
+</template>
